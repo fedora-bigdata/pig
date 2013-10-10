@@ -139,7 +139,6 @@
       <version>2.2</version>
     </dependency>
     <dependency>
-    <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>avro</artifactId>
       <version>1.3.2</version>
