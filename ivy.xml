@@ -201,6 +201,7 @@
     <dependency org="automaton" name="automaton" rev="1.11-8" conf="compile->default"/>
 
     <dependency org="jruby" name="jruby" rev="${jruby.version}" conf="compile->default"/>
+    <dependency org="bytelist" name="bytelist" rev="${bytelist.version}" conf="compile->default"/>
 
     <dependency org="hbase" name="hbase" rev="${hbase.version}" conf="compile->default">
       <artifact name="hbase" type="jar"/>
