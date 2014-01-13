@@ -33,7 +33,7 @@ import org.apache.pig.ResourceSchema;
 import org.apache.pig.LoadPushDown.RequiredFieldList;
 import org.apache.pig.backend.executionengine.ExecException;
 import org.apache.pig.data.DataType;
-import org.mortbay.log.Log;
+import org.eclipse.jetty.util.log.Log;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -584,7 +584,7 @@ public class AvroStorageSchemaConversionUtilities {
             return null;
           }
         } catch (ExecException e) {
-          Log.warn("ExecException caught in newSchemaFromRequiredFieldList", e);
+          Log.getLog().warn("ExecException caught in newSchemaFromRequiredFieldList", e);
           return null;
         }
         if (rf.getSubFields() == null) {
