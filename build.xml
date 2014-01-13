@@ -174,7 +174,7 @@
            input="${hadoop-core.version}"
            regexp="\d+\.(\d+)\.\d+"
            select="\1" /-->
-    <property name="hadoopversion" value="20" />
+    <property name="hadoopversion" value="23" />
 
     <condition property="isHadoop23">
         <equals arg1="${hadoopversion}" arg2="23"/>
@@ -189,7 +189,7 @@
       e.g. "client", "server", ... . Only values "94" and "95" are supported
       at the moment.
     -->
-    <property name="hbaseversion" value="94" />
+    <property name="hbaseversion" value="95" />
 
     <property name="src.shims.dir" value="${basedir}/shims/src/hadoop${hadoopversion}" />
     <property name="src.shims.test.dir" value="${basedir}/shims/test/hadoop${hadoopversion}" />
@@ -386,7 +386,7 @@
         <mkdir dir="${test.build.classes}" />
         <mkdir dir="${src.gen.dot.parser.dir}" />
         <mkdir dir="${src.gen.textdata.parser.dir}" />
-        <move file="${ivy.lib.dir}/javacc-${javacc.version}.jar" tofile="${javacc.home}/javacc.jar"/>
+        <move file="${ivy.lib.dir}/javacc-SYSTEM.jar" tofile="${javacc.home}/javacc.jar"/>
         <tstamp>
             <format property="timestamp" pattern="MMM dd yyyy, HH:mm:ss" />
         </tstamp>
@@ -538,7 +538,7 @@
         <echo>*** To compile with all warnings enabled, supply -Dall.warnings=1 on command line ***</echo>
         <echo>*** Else, you will only be warned about deprecations ***</echo>
         <compileSources sources="${src.dir};${src.gen.dir};${src.lib.dir}/shock;${src.lib.dir}/bzip2;${src.shims.dir}"
-            excludes="" dist="${build.classes}" cp="classpath" warnings="${javac.args.warnings}" />
+            excludes="**/jython/**" dist="${build.classes}" cp="classpath" warnings="${javac.args.warnings}" />
     </target>
 
     <target name="compile-test" depends="compile, ivy-test">
@@ -628,7 +628,7 @@
     <!-- ================================================================== -->
     <!-- @deprecated, Documentation                                         -->
     <!-- ================================================================== -->
-    <target name="docs" depends="forrest.check, javadoc-all" description="Generate forrest-based documentation.
+    <target name="docs" depends="javadoc-all" description="Generate forrest-based documentation.
       To use, specify -Dforrest.home=&lt;base of Apache Forrest installation&gt; on the command line." if="forrest.home">
        <exec dir="${docs.dir}" executable="${forrest.home}/bin/forrest" failonerror="true">
        </exec>
