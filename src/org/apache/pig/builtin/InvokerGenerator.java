@@ -55,7 +55,6 @@ import org.apache.pig.impl.PigContext;
 import org.apache.pig.impl.logicalLayer.schema.Schema;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
-import org.python.google.common.collect.Maps;
 
 import com.google.common.collect.Sets;
 

@@ -45,7 +45,7 @@ import org.apache.pig.newplan.logical.relational.LogicalSchema;
 import org.apache.pig.newplan.logical.relational.LogicalSchema.LogicalFieldSchema;
 import org.apache.pig.parser.LogicalPlanBuilder;
 import org.apache.pig.parser.SourceLocation;
-import org.python.google.common.base.Joiner;
+import com.google.common.base.Joiner;
 
 import com.google.common.collect.Lists;
 
